@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATM Interface</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+    .hidden {
+      display: none;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+    input, button {
+      display: block;
+      width: 75%;
+      margin: 10px auto;
+      padding: 10px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Get Free Money ATM</h1>
+    <p>Welcome</p>
+
+    <div id="username-section">
+      <input type="text" id="username" placeholder="Enter your name">
+      <button onclick="AtmUsername()">Proceed</button>
+    </div>
+
+    <div id="pin-section" class="hidden">
+      <input type="password" id="pin" placeholder="Enter 4-digit PIN">
+      <button onclick="AtmPassword()">Submit</button>
+      <p id="pin-attempts"></p>
+    </div>
+
+    <div id="account-section" class="hidden">
+      <h3>Select Transaction</h3>
+      <button onclick="inquiry()">Check Balance</button>
+      <button onclick="withdrawal()">Withdraw</button>
+      <button onclick="deposit()">Deposit</button>
+      <button onclick="exitATM()">Exit</button>
+      <p id="balance-display"></p>
+    </div>
+
+    <div id="transaction-section" class="hidden">
+      <input type="number" id="transaction-amount" placeholder="Enter amount">
+      <button onclick="confirmTransaction()">Confirm</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
